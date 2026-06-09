@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel - ID Card Generator</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">Admin Dashboard</div>
+      <nav>
+        <a href="index.html">User Portal</a>
+        <a href="admin.html">Admin Panel</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container admin-container">
+    <section class="panel login-panel" id="loginPanel">
+      <h2>Admin login</h2>
+      <p>Enter the admin password to access the card manager.</p>
+      <input id="adminPassword" type="password" placeholder="Password" />
+      <button id="loginButton">Login</button>
+      <p class="hint">Password: <strong>admin123</strong></p>
+    </section>
+
+    <section class="panel admin-panel hidden" id="adminPanel">
+      <div class="admin-header">
+        <h2>Saved ID Cards</h2>
+        <button id="logoutButton" class="secondary">Logout</button>
+      </div>
+
+      <div class="admin-actions">
+        <form id="cardEntryForm">
+          <h3>Add new ID card</h3>
+          <div class="grid-two">
+            <label>
+              University
+              <select id="adminSchoolSelect" required></select>
+            </label>
+            <div class="school-logo-field">
+              <img id="adminSchoolLogoPreview" class="school-logo-preview hidden" alt="School logo preview" />
+            </div>
+          </div>
+          <div id="adminCustomSchoolContainer" class="hidden">
+            <label>
+              Custom school or institution
+              <input id="adminSchoolName" type="text" placeholder="Enter school name" />
+            </label>
+          </div>
+          <div class="grid-two">
+            <label>
+              Full Name
+              <input id="adminName" type="text" required />
+            </label>
+          </div>
+          <div class="grid-two">
+            <label>
+              Role / Position
+              <input id="adminRole" type="text" required />
+            </label>
+            <label>
+              ID Number
+              <input id="adminId" type="text" required />
+            </label>
+          </div>
+          <div class="grid-two">
+            <label>
+              Passport photo
+              <input id="adminPassportUpload" type="file" accept="image/*" />
+            </label>
+            <div></div>
+          </div>
+          <div class="grid-two">
+            <label>
+              Department
+              <input id="adminDepartment" type="text" />
+            </label>
+            <label>
+              Valid Until
+              <input id="adminValidity" type="text" />
+            </label>
+          </div>
+          <div class="grid-two">
+            <label>
+              Issued Date
+              <input id="adminIssuedDate" type="text" />
+            </label>
+            <div></div>
+          </div>
+          <div class="grid-two">
+            <label>
+              Holder's signature
+              <input id="adminHolderSignature" type="text" />
+            </label>
+            <label>
+              Registrar's signature
+              <input id="adminRegistrarSignature" type="text" />
+            </label>
+          </div>
+          <div class="grid-two">
+            <label>
+              Upload holder's signature
+              <input id="adminHolderSignatureUpload" type="file" accept="image/*" />
+            </label>
+            <label>
+              Upload registrar's signature
+              <input id="adminRegistrarSignatureUpload" type="file" accept="image/*" />
+            </label>
+          </div>
+          <div class="actions">
+            <button type="submit">Save card</button>
+            <button type="button" id="exportButton" class="secondary">Copy JSON</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="card-list" id="cardList"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">Admin portal for managing ID card records in browser storage.</div>
+  </footer>
+
+  <script src="js/universities.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

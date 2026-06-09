@@ -1,0 +1,10 @@
+# Redirect root requests to the portal landing page
+RewriteEngine On
+RewriteRule ^$ index.html [L]
+
+# Redirect admin aliases
+RewriteRule ^admin/?$ admin/index.html [L]
+RewriteRule ^user/?$ user/login.html [L]
+
+# Serve PHP endpoints directly
+RewriteRule ^api/(.*)$ api/$1 [L,QSA]
