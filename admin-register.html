@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Register - School Fees System</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo"><img src="images/logo.svg" alt="School Fees System Logo"></div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="pages/students.html" class="nav-link">Students</a></li>
+                <li><a href="pages/payments.html" class="nav-link">Payments</a></li>
+                <li><a href="pages/classes.html" class="nav-link">Classes</a></li>
+                <li><a href="pages/reports.html" class="nav-link">Reports</a></li>
+                <li><a id="authLink" href="admin-login.html" class="nav-link">Admin Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container" style="max-width: 550px; margin-top: 80px;">
+        <div class="page-header">
+            <h1>Register Admin</h1>
+            <p>Create a new administrator account for the system.</p>
+        </div>
+
+        <form id="adminRegisterForm" class="form-card">
+            <div class="form-group">
+                <label for="registerUsername">Username</label>
+                <input type="text" id="registerUsername" placeholder="Choose a username" required>
+            </div>
+            <div class="form-group">
+                <label for="registerEmail">Email</label>
+                <input type="email" id="registerEmail" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="registerPassword">Password</label>
+                <input type="password" id="registerPassword" placeholder="Choose a password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Create Admin Account</button>
+            <p style="margin-top: 16px; color: #7f8c8d;">Already have an admin account? <a href="admin-login.html">Log in here</a>.</p>
+        </form>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 School Fees Management System. All rights reserved.</p>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
